@@ -11,14 +11,14 @@
   tasks:
     - name: Create EC2 instance
       amazon.aws.ec2_instance:
-        name: "ansible-Test-VM"
-        region: "{{ region }}"
-        instance_type: "{{ instance_type }}"
-        image: "{{ ami }}"
-        key_name: "{{ key_name }}"
-        count: 1
-        wait: true
-        assign_public_ip: true
-        instance_tags:
-          Name: ansible-test
+          name: "Ansible-VM"
+          key_name: "ansible-key"
+          vpc_subnet_id: subnet-0433a9f292a716070
+          instance_type: t2.micro
+          security_group: default
+          network:
+            assign_public_ip: true
+          image_id: "{{ ami }}"
+          tags:
+            Environment: Testing
 
