@@ -2,7 +2,7 @@
 - name: Launch EC2 Instance
   hosts: localhost
   gather_facts: False
-  vars:
+  vars: 
     region: ap-south-1  # Mumbai region code
     instance_type: t2.micro
     ami: ami-0287a05f0ef0e9d9a  # Ubuntu AMI ID (replace with the latest Ubuntu AMI ID for the specified region)
