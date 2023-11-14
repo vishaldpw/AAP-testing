@@ -11,6 +11,7 @@
   tasks:
     - name: Create EC2 instance
       amazon.aws.ec2_instance:
+        name: "ansible-Test-VM"
         region: "{{ region }}"
         instance_type: "{{ instance_type }}"
         image: "{{ ami }}"
