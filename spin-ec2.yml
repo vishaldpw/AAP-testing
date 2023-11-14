@@ -10,7 +10,7 @@
     
   tasks:
     - name: Create EC2 instance
-      ec2_instance:
+      amazon.aws.ec2_instance:
         region: "{{ region }}"
         instance_type: "{{ instance_type }}"
         image: "{{ ami }}"
