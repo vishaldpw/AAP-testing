@@ -1,6 +1,6 @@
 ---
 - name: install nginx on ec2
-  hosts: all
+  hosts: "{{ host }}"
   gather_facts: False
     
   tasks:
