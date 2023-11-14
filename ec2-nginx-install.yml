@@ -1,0 +1,10 @@
+---
+- name: install nginx on ec2
+  hosts: all
+  gather_facts: False
+    
+  tasks:
+    - name: install nginx
+      apt:
+          name: nginx
+          state: present
