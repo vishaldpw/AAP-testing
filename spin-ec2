@@ -5,11 +5,9 @@
   vars:
     region: ap-south-1  # Mumbai region code
     instance_type: t2.micro
-    ami: ami-xxxxxxxxxxxxxxxx  # Ubuntu AMI ID (replace with the latest Ubuntu AMI ID for the specified region)
-    key_name: your_key_pair_name  # Replace with your EC2 key pair name
-    aws_access_key: "{{ lookup('env', 'AWS_ACCESS_KEY_ID') }}"
-    aws_secret_key: "{{ lookup('env', 'AWS_SECRET_ACCESS_KEY') }}"
-
+    ami: ami-0287a05f0ef0e9d9a  # Ubuntu AMI ID (replace with the latest Ubuntu AMI ID for the specified region)
+    key_name: ansible-key  # Replace with your EC2 key pair name
+    
   tasks:
     - name: Create EC2 instance
       ec2_instance:
@@ -21,5 +19,5 @@
         wait: true
         assign_public_ip: true
         instance_tags:
-          Name: MyInstance
+          Name: ansible-test
 
