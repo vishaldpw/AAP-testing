@@ -10,7 +10,7 @@
   tasks:
     - name: Create EC2 instance
       amazon.aws.ec2_instance:
-          name: "Ansible-VM"
+          name: "Ansible-VM-2"
           region: "{{ region }}"
           key_name: "{{ key_name }}"
           vpc_subnet_id: subnet-0c4a7e4cd8bb3b540
