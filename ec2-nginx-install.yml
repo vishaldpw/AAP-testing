@@ -2,7 +2,7 @@
 - name: install nginx on ec2
   hosts: all
   become: yes
-  gather_facts: False
+  gather_facts: yes
   tasks:
     - name: Update apt cache
       apt:
