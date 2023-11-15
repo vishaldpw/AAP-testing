@@ -3,23 +3,22 @@
   hosts: localhost
   gather_facts: False
   vars: 
-    region: ap-south-1  # Mumbai region code
-    instance_type: t2.micro
-    ami: ami-0287a05f0ef0e9d9a  # Ubuntu AMI ID (replace with the latest Ubuntu AMI ID for the specified region)
-    key_name: ansible-key  # Replace with your EC2 key pair name
+    region: us-east-2  # Ohio
+    ami: ami-0e83be366243f524a  
+    key_name: ansible-key-ohio
     
   tasks:
     - name: Create EC2 instance
       amazon.aws.ec2_instance:
           name: "Ansible-VM"
           region: "{{ region }}"
-          key_name: "ansible-key"
-          vpc_subnet_id: subnet-0433a9f292a716070
+          key_name: "{{ key_name }}"
+          vpc_subnet_id: subnet-0c4a7e4cd8bb3b540
           instance_type: t2.micro
-          security_group: default
+          security_group: sg-05dad18f2e7b0e9b3
           network:
             assign_public_ip: true
           image_id: "{{ ami }}"
           tags:
-            Environment: Testing
+            Environment: Testing-Ansible
 
