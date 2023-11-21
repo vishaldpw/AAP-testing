@@ -2,7 +2,7 @@
 - hosts: all
   become: yes
   tasks:
-  - name: Stop and Start ssh
+  - name: Start vsftpd service
     service:
       name: vsftpd
       state: started
