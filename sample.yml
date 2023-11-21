@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Stop and Start ssh
+    service:
+      name: vsftpd
+      state: started
+
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Install docker python package
+      apt:
+       name: cmatrix
+       state: present
