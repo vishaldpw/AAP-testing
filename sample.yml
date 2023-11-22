@@ -15,3 +15,20 @@
       apt:
        name: cmatrix
        state: present
+
+---
+- name: Create incident in servicenow
+  servicenow.itsm.incident:
+    instance:
+      host: https://instance_id.service-now.com
+      username: user
+      password: pass
+
+    state: new
+    caller: some.user
+    short_description: User is not receiving email
+    description: User has been unable to receive email for the past 15 minutes
+    attachments:
+      - path: path/to/attachment.txt
+    impact: low
+    urgency: low
